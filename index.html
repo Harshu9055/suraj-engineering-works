@@ -3,36 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suraj Engineering Works</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        @media (max-width: 768px) {
-    /* Header adjustments */
-    .main-header {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px 0; /* Add some spacing at the top and bottom */
-    }
-
-    .logo-container {
-        flex-direction: column; /* Stack logo and title vertically */
-        align-items: center;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        margin-top: 10px; /* Adds some space between the logo and navbar */
-    }
-
-    /* Sign Up button */
-    .signup-button {
-        position: static; /* Remove the absolute positioning */
-        margin-top: 15px;
-    }
-}
-
         @media (max-width: 768px) {
     /* Header adjustments */
     .main-header {
@@ -218,7 +193,20 @@
         }
 
         /* Sign Up button styling */
-     
+        .signup-button {
+            position: absolute;
+            top: 10px;
+            right: 13px;
+            padding: 10px 20px;
+            background-color: #5d67c5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .signup-button:hover {
+            background-color: #5d67c5;
         }
 
         /* Hero section styling */
@@ -301,7 +289,36 @@
             font-size: 1.1em; /* Reduced font size */
             line-height: 1.5;
         }
+        .director-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            margin: 0 auto;
+            gap: 20px;
+        }
 
+        .director-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .director-info {
+            text-align: center;
+        }
+
+        .director-info h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .director-info p {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
         /* Partner section styling */
         .partner-container {
             display: flex;
@@ -380,9 +397,11 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
+               
+                  
             </ul>
         </nav>
-   
+    
     </header>
 
     <section class="hero">
@@ -417,17 +436,33 @@
             <p>With over a decade of experience, Suraj Engineering Works specializes in civil engineering projects for energy and utilities, delivering high-quality service and reliability.</p>
         </section>
 
-        <section id="founder" class="section">
-            <h2>Our Founder</h2>
-            <div class="founder-container">
-                <img src="images/founder-photo.jpg" alt="Rahul Singh" class="founder-photo">
-                <div class="founder-info">
-                    <h3>Rahul Singh</h3>
-                    <p>Founder & CEO</p>
-                    <p>Rahul Singh is the visionary leader behind Suraj Engineering Works. With years of expertise in civil engineering, he has steered the company to deliver innovative and reliable infrastructure solutions for the energy and utilities sector.</p>
-                </div>
+   
+    <!-- Founder Section -->
+    <section id="founder" class="section">
+        <h2>Our Founder</h2>
+        <div class="founder-container">
+            <img src="images/founder-photo.jpg" alt="Rahul Singh" class="founder-photo">
+            <div class="founder-info">
+                <h3>Rahul Singh</h3>
+                <p>Founder & CEO</p>
+                <p>Rahul Singh is the visionary leader behind Suraj Engineering Works. With years of expertise in civil engineering, he has steered the company to deliver innovative and reliable infrastructure solutions for the energy and utilities sector.</p>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Updated Managing Director Section -->
+    <section id="director" class="section">
+        <h2>Our Managing Director</h2>
+        <div class="director-container">
+            <img src="images/director-photo.jpg" alt="Anoop Dalal" class="director-photo">
+            <div class="director-info">
+                <h3>Anoop Dalal</h3>
+                <p>Managing Director</p>
+                <p>Anoop Dalal is an experienced leader who plays a pivotal role in the company’s strategic direction and operations, ensuring that Suraj Engineering Works delivers on its mission with excellence.</p>
+            </div>
+        </div>
+    </section>
+    
 
         <section id="partners" class="section">
             <h2>Our Partner</h2>
