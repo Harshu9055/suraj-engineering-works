@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Suraj Engineering Works</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(145deg, #1e1e1e, #333);
+            color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.5em;
+            color: #ffa726;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: #2a2a2a;
+            width: 380px;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 -2px 6px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            border: 1px solid #444;
+        }
+
+        /* Profile Picture */
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 2px solid #ffa726;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Form and Info Styles */
+        .profile-info, .edit-form {
+            margin: 12px 0;
+            text-align: left;
+        }
+        .profile-info strong {
+            display: inline-block;
+            width: 90px;
+            color: #ffa726;
+        }
+        .edit-form {
+            display: none;
+            flex-direction: column;
+        }
+        .edit-form label {
+            color: #ffa726;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .edit-form input, .edit-form select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            background: #3a3a3a;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            border-radius: 8px;
+            outline: none;
+            transition: background 0.3s;
+        }
+        .edit-form input:focus, .edit-form select:focus {
+            background: #444;
+        }
+
+        /* Buttons */
+        .button {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #ffa726, #ff9800);
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        }
+        .button:hover {
+            background: linear-gradient(145deg, #ff9800, #e68900);
+        }
+        .edit-button, .save-button {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <h1>Your Profile</h1>
+
+        <!-- Profile Picture -->
+        <div class="profile-picture">
+            <img id="profile-img" src="images/default-profile.png" alt="Profile Picture">
+        </div>
+
+        <!-- Profile Display Information -->
+        <div id="profile-data" class="profile-info">
+            <div><strong>Name:</strong> <span id="display-name">Loading...</span></div>
+            <div><strong>Phone:</strong> <span id="display-phone">Loading...</span></div>
+            <div><strong>Email:</strong> <span id="display-email">Loading...</span></div>
+            <div><strong>Age:</strong> <span id="display-age">Loading...</span></div>
+            <div><strong>Gender:</strong> <span id="display-gender">Loading...</span></div>
+            <div><strong>Role:</strong> <span id="display-role">Loading...</span></div>
+        </div>
+
+        <!-- Edit Form -->
+        <form id="edit-profile-form" class="edit-form" novalidate>
+            <label>Name:</label>
+            <input type="text" id="profile-name" required>
+
+            <label>Phone:</label>
+            <input type="text" id="profile-phone" required>
+
+            <label>Email:</label>
+            <input type="email" id="profile-email" required>
+
+            <label>Age:</label>
+            <input type="number" id="profile-age" required>
+
+            <label>Gender:</label>
+            <select id="profile-gender" required>
+                <option value="">Select...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label>Role:</label>
+            <input type="text" id="profile-role" required>
+
+            <label>Profile Photo:</label>
+            <input type="file" id="profile-photo" accept="image/*" onchange="previewImage(event)">
+
+            <button type="button" class="button save-button" onclick="saveProfile()">Save</button>
+        </form>
+
+        <button class="button edit-button" onclick="toggleEditForm()">Edit Profile</button>
+    </div>
+
+    <script>
+        // Fetch and display profile data
+        async function fetchProfile() {
+            try {
+                const response = await fetch('/api/profile', {
+                    headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+                });
+
+                if (response.ok) {
+                    const profile = await response.json();
+                    document.getElementById('display-name').innerText = profile.name || 'N/A';
+                    document.getElementById('display-phone').innerText = profile.phone || 'N/A';
+                    document.getElementById('display-email').innerText = profile.email || 'N/A';
+                    document.getElementById('display-age').innerText = profile.age || 'N/A';
+                    document.getElementById('display-gender').innerText = profile.gender || 'N/A';
+                    document.getElementById('display-role').innerText = profile.role || 'N/A';
+                    document.getElementById('profile-img').src = profile.profilePhoto || 'images/default-profile.png';
+
+                    // Populate the edit form
+                    document.getElementById('profile-name').value = profile.name;
+                    document.getElementById('profile-phone').value = profile.phone;
+                    document.getElementById('profile-email').value = profile.email;
+                    document.getElementById('profile-age').value = profile.age;
+                    document.getElementById('profile-gender').value = profile.gender.toLowerCase();
+                    document.getElementById('profile-role').value = profile.role;
+                } else {
+                    const errorData = await response.json();
+                    alert('Failed to load profile data: ' + errorData.message);
+                }
+            } catch (error) {
+                alert('Failed to load profile data. Please try again later.');
+            }
+        }
+
+        // Toggle edit form visibility
+        function toggleEditForm() {
+            const profileData = document.getElementById('profile-data');
+            const editForm = document.getElementById('edit-profile-form');
+            profileData.style.display = profileData.style.display === 'none' ? 'block' : 'none';
+            editForm.style.display = editForm.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Preview the selected profile image
+        function previewImage(event) {
+            const image = document.getElementById('profile-img');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        // Save profile data and update display
+        async function saveProfile() {
+            const formData = new FormData();
+            formData.append('name', document.getElementById('profile-name').value);
+            formData.append('phone', document.getElementById('profile-phone').value);
+            formData.append('email', document.getElementById('profile-email').value);
+            formData.append('age', document.getElementById('profile-age').value);
+            formData.append('gender', document.getElementById('profile-gender').value);
+            formData.append('role', document.getElementById('profile-role').value);
+
+            // Append profile photo if selected
+            const profilePhoto = document.getElementById('profile-photo').files[0];
+            if (profilePhoto) {
+                formData.append('profilePhoto', profilePhoto);
+            }
+
+            try {
+                const response = await fetch('/api/updateProfile', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: formData
+                });
+
+                if (response.ok) {
+                    alert('Profile updated successfully!');
+                    window.location.reload(); // Reload to fetch updated profile photo
+                } else {
+                    const errorData = await response.json();
+                    alert(`Error updating profile: ${errorData.message}`);
+                }
+            } catch (error) {
+                console.error('Network error during profile update:', error);
+                alert('Failed to update profile. Please try again later.');
+            }
+        }
+
+        // Fetch profile data on page load
+        window.onload = fetchProfile;
+    </script>
+</

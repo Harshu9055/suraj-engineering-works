@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard - Suraj Engineering Works</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #1f1f1f;
+            padding: 10px; /* Reduced padding for half-height */
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.8em; /* Adjusted font size */
+        }
+        nav {
+            margin: 10px 0; /* Adjusted margin */
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #42a5f5; /* Change color on hover to blue */
+        }
+        .dashboard-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center; /* Aligns items vertically */
+            padding: 20px;
+            min-height: calc(100vh - 60px); /* Updated height to account for reduced header */
+        }
+        .card {
+            background: #2a2a2a;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px; /* Margin for space between cards */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #42a5f5; /* Accent color for headings changed to blue */
+        }
+        .card p {
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #42a5f5; /* Blue button color */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .card a:hover {
+            background-color: #2196f3; /* Darker blue shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard - Suraj Engineering Works</h1>
+        <nav>
+            <a href="profile.html" id="profile-link">Profile</a>
+            <a href="#" id="logout-link" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+    
+    <div class="dashboard-container">
+        <div class="card">
+            <h3>Upload Images</h3>
+            <p>Upload project images directly.</p>
+            <a href="#" onclick="uploadImages()">Go</a>
+        </div>
+        <div class="card">
+            <h3>Where to Go</h3>
+            <p>Find out the next project location.</p>
+            <a href="#" onclick="showLocation()">View Location</a>
+        </div>
+        <div class="card">
+            <h3>Which Vehicle</h3>
+            <p>Select the vehicle for the project.</p>
+            <a href="#" onclick="chooseVehicle()">Select Vehicle</a>
+        </div>
+        <div class="card">
+            <h3>What’s Done Today</h3>
+            <p>Review today's completed tasks.</p>
+            <a href="#" onclick="viewTasks()">See Tasks</a>
+        </div>
+        <div class="card">
+            <h3>Finance Overview</h3>
+            <p>Track the project finances.</p>
+            <a href="#" onclick="viewFinance()">Check Finances</a>
+        </div>
+        <div class="card">
+            <h3>Team Status</h3>
+            <p>Check the availability of team members.</p>
+            <a href="#" onclick="viewTeamStatus()">Team Availability</a>
+        </div>
+        <div class="card">
+            <h3>Daily Reports</h3>
+            <p>Generate and view daily reports.</p>
+            <a href="#" onclick="generateReports()">Daily Reports</a>
+        </div>
+        <div class="card">
+            <h3>Notifications</h3>
+            <p>Stay updated with important alerts.</p>
+            <a href="#" onclick="checkNotifications()">View Alerts</a>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('user'); // Remove user data from local storage
+            window.location.href = 'index.html'; // Redirect to the homepage
+        }
+        // Placeholder functions for card actions
+        function uploadImages() {
+            alert("Functionality to upload images will be implemented.");
+        }
+        function showLocation() {
+            alert("Functionality to show location will be implemented.");
+        }
+        function chooseVehicle() {
+            alert("Functionality to choose vehicle will be implemented.");
+        }
+        function viewTasks() {
+            alert("Functionality to view tasks will be implemented.");
+        }
+        function viewFinance() {
+            alert("Functionality to view finance will be implemented.");
+        }
+        function viewTeamStatus() {
+            alert("Functionality to view team status will be implemented.");
+        }
+        function generateReports() {
+            alert("Functionality to generate reports will be implemented.");
+        }
+        function checkNotifications() {
+            alert("Functionality to check notifications will be implemented.");
+        }
+    </script>
+    <script src="logout.js"></script>
+</body>
+</html>
