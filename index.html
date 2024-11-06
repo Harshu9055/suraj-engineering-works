@@ -527,7 +527,18 @@
                 </form>
             </div>
         </section>
-        
+    </section>
+    <section id="credits" class="section">
+        <h2>Developed By</h2>
+        <div class="developer-container">
+            <img src="images/developer-photo.jpg" alt="Developer Name" class="developer-photo">
+            <div class="developer-info">
+                <h3>Harshit</h3>
+               
+                <p>This website was made with ❤️ by by Harshit.</p>
+            </div>
+        </div>
+    </section>       
         <section id="contact" class="section">
             <h2>Contact Us</h2>
             <p>Reach out to us to discuss your project needs.</p>
@@ -536,7 +547,43 @@
                 <p>Phone: 999 602 2530</p>
                 <p>Location: Azad Nagar, Hisar, Haryana-125001</p>
             </address>
-        </section>
+  
+        
+        <style>
+            /* Developer credit section styling */
+            .developer-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                justify-content: center;
+                padding: 20px;
+                background-color: #2a2a2a;
+                border-radius: 10px;
+                max-width: 500px;
+                margin: 20px auto;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+        
+            .developer-photo {
+                width: 60px; /* Smaller size */
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+        
+            .developer-info h3 {
+                margin: 0;
+                font-size: 1.2em;
+            }
+        
+            .developer-info p {
+                font-size: 1em;
+                line-height: 1.5;
+            }
+        </style>
+        
 
         
     </main>
