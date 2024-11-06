@@ -6,6 +6,136 @@
     <title>Suraj Engineering Works</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        @media (max-width: 768px) {
+    /* Header adjustments */
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Hero section adjustments */
+    .hero h2 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+
+    /* Service cards */
+    .services-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .service-card {
+        width: 90%; /* Full width on mobile */
+        max-width: 300px;
+    }
+
+    /* Founder section */
+    .founder-container {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    /* Partner section */
+    .partner-container {
+        flex-direction: column;
+    }
+    .partner-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* Map adjustments */
+    .map-container img {
+        width: 100%; /* Full width for mobile */
+    }
+    
+    /* Contact form adjustments */
+    .contact-container, .contact-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Footer links */
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Hero section adjustments */
+    .hero h2 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+
+    /* Service cards */
+    .services-container {
+        flex-direction: column;
+        align-items: center; /* Center cards horizontally */
+        gap: 15px;
+    }
+    .service-card {
+        width: 90%; /* Full width on mobile */
+        max-width: 300px;
+    }
+
+    /* Founder section */
+    .founder-container {
+        width: 90%;
+        max-width: 320px;
+        align-items: center; /* Center founder info */
+    }
+
+    /* Partner section */
+    .partner-container {
+        flex-direction: column;
+        align-items: center; /* Center partner card */
+    }
+    .partner-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* Map adjustments */
+    .map-container img {
+        width: 100%; /* Full width for mobile */
+    }
+    
+    /* Contact form adjustments */
+    .contact-container, .contact-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Footer links */
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
         /* General body styling */
         body {
             margin: 0;
