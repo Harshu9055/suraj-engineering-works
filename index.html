@@ -11,6 +11,33 @@
     .main-header {
         flex-direction: column;
         text-align: center;
+        padding: 10px 0; /* Add some spacing at the top and bottom */
+    }
+
+    .logo-container {
+        flex-direction: column; /* Stack logo and title vertically */
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px; /* Adds some space between the logo and navbar */
+    }
+
+    /* Sign Up button */
+    .signup-button {
+        position: static; /* Remove the absolute positioning */
+        margin-top: 15px;
+    }
+}
+
+        @media (max-width: 768px) {
+    /* Header adjustments */
+    .main-header {
+        flex-direction: column;
+        text-align: center;
     }
 
     .navbar ul {
