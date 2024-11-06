@@ -363,3 +363,47 @@ body {
 .contact-form button:hover {
     background-color: #45a049;
 }
+
+
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    /* Customize font size, layout adjustments, etc. */
+}
+.director-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #3a3a3c;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+.director-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.director-info {
+    text-align: center;
+}
+
+.director-info h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.director-info p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
