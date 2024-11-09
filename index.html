@@ -7,409 +7,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suraj Engineering Works</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        @media (max-width: 768px) {
-    /* Header adjustments */
-    .main-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    /* Hero section adjustments */
-    .hero h2 {
-        font-size: 2em;
-    }
-    .hero p {
-        font-size: 1em;
-    }
-
-    /* Service cards */
-    .services-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .service-card {
-        width: 90%; /* Full width on mobile */
-        max-width: 300px;
-    }
-
-    /* Founder section */
-    .founder-container {
-        width: 90%;
-        max-width: 320px;
-    }
-
-    /* Partner section */
-    .partner-container {
-        flex-direction: column;
-    }
-    .partner-card {
-        width: 90%;
-        max-width: 300px;
-    }
-
-    /* Map adjustments */
-    .map-container img {
-        width: 100%; /* Full width for mobile */
-    }
-    
-    /* Contact form adjustments */
-    .contact-container, .contact-card {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    /* Footer links */
-    .footer-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-@media (max-width: 768px) {
-    /* Header adjustments */
-    .main-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    /* Hero section adjustments */
-    .hero h2 {
-        font-size: 2em;
-    }
-    .hero p {
-        font-size: 1em;
-    }
-
-    /* Service cards */
-    .services-container {
-        flex-direction: column;
-        align-items: center; /* Center cards horizontally */
-        gap: 15px;
-    }
-    .service-card {
-        width: 90%; /* Full width on mobile */
-        max-width: 300px;
-    }
-
-    /* Founder section */
-    .founder-container {
-        width: 90%;
-        max-width: 320px;
-        align-items: center; /* Center founder info */
-    }
-
-    /* Partner section */
-    .partner-container {
-        flex-direction: column;
-        align-items: center; /* Center partner card */
-    }
-    .partner-card {
-        width: 90%;
-        max-width: 300px;
-    }
-
-    /* Map adjustments */
-    .map-container img {
-        width: 100%; /* Full width for mobile */
-    }
-    
-    /* Contact form adjustments */
-    .contact-container, .contact-card {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    /* Footer links */
-    .footer-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-        /* General body styling */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            background-color: #121212;
-        }
-
-        /* Main header styling */
-        .main-header {
-            position: relative;
-            background-color: #1f1f1f;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-        }
-
-        .logo-container h1 {
-            margin: 0;
-            font-size: 1.5em;
-        }
-
-        /* Navbar styling */
-        .navbar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 15px;
-        }
-
-        .navbar ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .navbar ul li a:hover {
-            color: #ff9800;
-        }
-
-        /* Sign Up button styling */
-        .signup-button {
-            position: absolute;
-            top: 10px;
-            right: 13px;
-            padding: 10px 20px;
-            background-color: #5d67c5;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .signup-button:hover {
-            background-color: #5d67c5;
-        }
-
-        /* Hero section styling */
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #333;
-            color: #ffffff;
-        }
-
-        .hero h2 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            margin: 10px 0 0;
-        }
-
-        /* Section styling */
-        .section {
-            padding: 40px 20px;
-            text-align: center;
-            color: #ffffff;
-        }
-
-        /* Service cards styling */
-        .services-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .service-card {
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-icon {
-            width: 110px;
-            height: 110px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        /* Founder section styling */
-        .founder-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 300px; /* Reduced size */
-            margin: 0 auto;
-            gap: 20px;
-        }
-
-        .founder-photo {
-            width: 120px; /* Reduced size */
-            height: 120px; /* Reduced size */
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .founder-info {
-            text-align: center;
-        }
-
-        .founder-info h3 {
-            font-size: 1.5em; /* Reduced font size */
-            margin: 10px 0;
-        }
-
-        .founder-info p {
-            font-size: 1.1em; /* Reduced font size */
-            line-height: 1.5;
-        }
-        .director-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 300px;
-            margin: 0 auto;
-            gap: 20px;
-        }
-
-        .director-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .director-info {
-            text-align: center;
-        }
-
-        .director-info h3 {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-
-        .director-info p {
-            font-size: 1.1em;
-            line-height: 1.5;
-        }
-        /* Partner section styling */
-        .partner-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .partner-card {
-            max-width: 300px;
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        .partner-logo {
-            width: 80px;
-            margin-bottom: 10px;
-        }
-
-        /* Footer styling */
-        footer {
-            background-color: #1f1f1f;
-            padding: 20px;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 20px;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .footer-links li a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links li a:hover {
-            color: #ff9800;
-        }
-
-        /* Map styling */
-        .map-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        .map-container img {
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-        }
-    </style>
+   
 </head>
 <body>
     <header class="main-header">
         <div class="logo-container">
-            <img src="images/logo.png" alt="Suraj Engineering Works Logo" class="logo">
-            <h1>Suraj Engineering Works</h1>
+            <h2>Suraj Engineering Works</h2>
         </div>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span> <!-- Menu icon -->
+        
+        <!-- Mobile-only icon (phone icon) -->
+        <i class="mobile-icon fas fa-phone"></i>
+    
         <nav class="navbar">
             <ul>
-                <li><a href="login.html">Employee Login</a></li>
+                <li><a href="login.html">Login</a></li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
-               
-                  
             </ul>
         </nav>
-    
     </header>
+    
+    <!-- Include Font Awesome script -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+    
 
     <section class="hero">
         <h2>Engineering the Future</h2>
         <p>Building and maintaining essential infrastructure for petrol pumps and power stations</p>
     </section>
 
-    <main>
+    <main>            <!-- Slideshow container -->
+        <div class="slideshow-container">
+        
+            <!-- Slide 1: Completed Project -->
+            <div class="slide fade">
+                <img src="images/completed-project.jpg" alt="Completed Project">
+                <div class="caption">Our Latest Completed Project: High-Performance Petrol Pump(sample image)</div>
+            </div>
+        
+            <!-- Slide 2: Upcoming Project -->
+            <div class="slide fade">
+                <img src="images/upcoming-project.jpg" alt="Upcoming Project">
+                <div class="caption">Coming Soon: Advanced Electric Power Station(sample image)</div>
+            </div>
+        
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        
+        </div>
+        <script>
+            function toggleMenu() {
+    document.querySelector('.navbar').classList.toggle('active');
+}
+
+        </script>
+        
+        <!-- Dot indicators -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+        
+        <script src="js/slideshow.js"></script>
+        
         <section id="services" class="section">
             <h2>Our Services</h2>
             <div class="services-container">
@@ -423,59 +89,53 @@
                     <h3>Petrol Pump</h3>
                     <p>Complete installation and setup of petrol pump facilities with quality assurance and safety standards.</p>
                 </div>
+
                 <div class="service-card">
                     <img src="images/maintenance-icon.jpg" alt="Maintenance & Repairs" class="service-icon">
                     <h3>Maintenance & Repairs</h3>
                     <p>Professional repair services for petrol pumps, electric stations, and other civil engineering structures.</p>
                 </div>
             </div>
+
         </section>
 
         <section id="about" class="section">
             <h2>About Us</h2>
-            <p>With over a decade of experience, Suraj Engineering Works specializes in civil engineering projects for energy and utilities, delivering high-quality service and reliability.</p>
+            <p>With over a decade of experience, Suraj Engineering Works has built a solid reputation for expertise in civil engineering projects focused on the energy and utilities sectors. From designing and constructing petrol pumps to the establishment and maintenance of electric power stations, we are committed to delivering exceptional quality and dependable service. Our team of skilled professionals works closely with partners and clients, ensuring each project meets the highest industry standards for safety, efficiency, and sustainability.
+
+                Our partnership with HPCL and other industry leaders has enabled us to stay at the forefront of engineering innovation, using advanced techniques and materials to enhance durability and efficiency. We pride ourselves on meticulous planning, precise execution, and an unwavering dedication to client satisfaction. At Suraj Engineering Works, reliability isn’t just a goal—it’s the foundation of our legacy and the key to our ongoing success in delivering sustainable, high-performance engineering solutions..</p>
         </section>
 
-   
-    <!-- Founder Section -->
-    <section id="founder" class="section">
-        <h2>Our Founder</h2>
-        <div class="founder-container">
-            <img src="images/founder-photo.jpg" alt="Rahul Singh" class="founder-photo">
-            <div class="founder-info">
-                <h3>Rahul Singh</h3>
-                <p>Founder & CEO</p>
-                <p>Rahul Singh is the visionary leader behind Suraj Engineering Works. With years of expertise in civil engineering, he has steered the company to deliver innovative and reliable infrastructure solutions for the energy and utilities sector.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Updated Managing Director Section -->
-    <section id="director" class="section">
-        <h2>Our Managing Director</h2>
-        <div class="director-container">
-            <img src="images/director-photo.jpg" alt="Anoop Dalal" class="director-photo">
-            <div class="director-info">
-                <h3>Anoop Dalal</h3>
-                <p>Managing Director</p>
-                <p>Anoop Dalal is an experienced leader who plays a pivotal role in the company’s strategic direction and operations, ensuring that Suraj Engineering Works delivers on its mission with excellence.</p>
-            </div>
-        </div>
-    </section>
-    
-
-        <section id="partners" class="section">
-            <h2>Our Partner</h2>
-            <div class="partner-container">
-                <div class="partner-card">
-                    <img src="images/hpcl-logo.png" alt="HPCL Logo" class="partner-logo">
-                    <p>We are proud to partner with Hindustan Petroleum Corporation Limited (HPCL), collaborating to provide exceptional energy solutions across India.</p>
+        <section id="team" class="section">
+            <h2>Operators</h2>
+            <div class="team-container">
+                <!-- Founder & CEO Card -->
+                <div class="team-card">
+                    <img src="images/founder-photo.jpg" alt="Rahul Singh" class="team-icon">
+                    <h2>Founder & CEO</h2>
+                    <h3>Rahul Singh</h3>
+                    <p>Rahul Singh, founder of Suraj Engineering Works, drives innovative, reliable solutions in energy infrastructure.</p>
+                </div>
+                
+                <!-- Partner Card -->
+                <div class="team-card">
+                    <img src="images/hpcl-logo.png" alt="HPCL Logo" class="team-icon">
+                    <h2>Our Partner</h2>
+                    <h3>HPCL</h3>
+                    <p>We proudly partner with HPCL, working together to deliver high-quality energy solutions throughout India.</p>
+                </div>
+        
+                <!-- Managing Director Card -->
+                <div class="team-card">
+                    <img src="images/director-photo.jpg" alt="Anoop Dalal" class="team-icon">
+                    <h2>Managing Director</h2>
+                    <h3>Anoop Dalal</h3>
+                    <p>Anoop Dalal steers Suraj Engineering Works' strategy and operations, ensuring mission excellence.</p>
                 </div>
             </div>
         </section>
-
         
-
+        
         <section class="map-container">
             <div class="map-card">
                 <h2>Our Work Locations</h2>
@@ -490,7 +150,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-top: 40px;
+                margin-top: 20px;
             }
         
             .map-card {
@@ -535,8 +195,9 @@
             <div class="developer-info">
                 <h3>Harshit</h3>
                
-                <p>This website was made with ❤️ by Harshit.</p>
-                <p> Connect on <a href="https://www.linkedin.com/in/harshit-singh-486285327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>.</p>
+                <p>This website was made with ❤️ by by Harshit.</p>
+                <p>Connect with me on<a href="https://www.linkedin.com/in/harshit-singh-486285327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"> LinkedIn</a>></p>
+
             </div>
         </div>
     </section>       
