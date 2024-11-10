@@ -792,7 +792,7 @@ body {
 
 /* Popup container */
 .popup {
-    background:black;
+    background:white;
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
