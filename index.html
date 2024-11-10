@@ -11,6 +11,19 @@
    
 </head>
 <body>
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <h2>Site Under Construction</h2>
+            <p>We're working hard to bring you a better experience. Please check back soon!</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
     <header class="main-header">
         <div class="logo-container">
             <h2>Suraj Engineering Works</h2>
