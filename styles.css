@@ -376,15 +376,7 @@ body {
     }
     
  
-    
-    /* Hero section adjustments */
-    .hero h2 {
-        font-size: 2em;
-    }
-    .hero p {
-        font-size: 1em;
-    }
-    
+
     /* Service cards */
     .services-container {
         flex-direction: column;
@@ -484,7 +476,7 @@ body {
 }
 
 .slideshow-container {
-    position: relative;
+    position:relative;
     max-width: 100%;
     max-height: 600px;
     margin: auto;
@@ -555,11 +547,6 @@ body {
         height: auto; /* Make the image height auto on smaller screens */
     }
 }
-
-
-
-
-
 
 
 
@@ -650,3 +637,136 @@ body {
     line-height: 1.5;
     color: #cccccc;
 }
+
+
+
+
+
+/* Map container styling */
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.map-card {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.map-card h2 {
+    margin-bottom: 20px;
+}
+
+.map-card img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+
+
+
+        
+
+/* Developer credit section styling */
+.developer-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.developer-photo {
+    width: 60px; /* Smaller size */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.developer-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.developer-info p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+/* Container for floating social icons */
+.floating-socials {
+    position: fixed;
+    top: 70%;
+    left: 10px; /* Adjust this to place it on the left or right side */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+  }
+  
+  /* General style for social links */
+  .floating-socials .social {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Customize each social platform color */
+  .floating-socials .facebook { background-color: #3b5998; }
+  .floating-socials .twitter { background-color: #1da1f2; }
+  .floating-socials .linkedin { background-color: #0077b5; }
+  .floating-socials .instagram { background-color: #e1306c; }
+  
+  /* Hover effect */
+  .floating-socials .social:hover {
+    background-color: #555;
+  }
+  
+
+  @media (max-width: 768px) {
+    .floating-socials {
+      top: auto;
+      bottom: 10px; /* Move icons to bottom on mobile */
+      left: 50%; /* Center-align icons */
+      transform: translateX(-50%); /* Center-align */
+      flex-direction: row; /* Display icons horizontally */
+      gap: 5px;
+    }
+  
+    .floating-socials .social {
+      width: 40px; /* Smaller size on mobile */
+      height: 40px;
+      font-size: 20px; /* Adjust icon size */
+      line-height: 40px;
+    }
+  }
