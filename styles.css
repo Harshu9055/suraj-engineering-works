@@ -791,6 +791,7 @@ width: 100%;
         justify-content:space-between;
         text-align: center; /* Center text content */
         position: relative;
+        padding: 10px;
     }
 
     #backvideo {
