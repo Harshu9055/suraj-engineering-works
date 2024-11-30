@@ -32,7 +32,7 @@ body {
 
 #dam{
 
-    width: 50%; /* Ensures it covers the entire width of the hero section */
+    width: 50%; 
     height: 50%;
 
 
@@ -156,6 +156,11 @@ body {
     gap: 10px;
 }
 
+.logo-container h2{
+
+font-weight: 300px;
+
+}
 .logo {
     width: 55px;
     height: 50px;
@@ -723,9 +728,29 @@ width: 100%;
 /* Add responsiveness for mobile devices */
 @media (max-width: 768px) {
 
-.header h2{
-    display: none;
-}
+    .header h2 {
+        display: none;
+    }
+    .name{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        
+    }
+    .name h2{
+
+        text-align: center;
+        padding-left: 12px;
+        margin: 0%;
+    }
+
+
+   
+    .header {
+        text-align: center; /* Center align header content */
+    }
+
+    .header
 
     #hero {
         display: flex;
@@ -734,12 +759,13 @@ width: 100%;
         justify-content: center;
         text-align: center; /* Center text content */
     }
-    
+
     #but {
         gap: 20px;
         display: flex;
         justify-content: center; /* Center buttons */
         margin-top: 20px; /* Add some spacing above buttons */
+        height: 85px;
     }
 
     #dam {
@@ -760,43 +786,32 @@ width: 100%;
     }
 
     #backvideo {
-        #backvideo {
-            width: 35%; /* Reduced size */
-            height: 35%;
-        }
+        width: 100%; /* Full width */
+        height: 100vh; /* Full viewport height */
+        object-fit: cover; /* Maintain aspect ratio and cover screen */
     }
 
     #menu-toggle {
-        display: block; /* Show hamburger button */
+        display: block; /* Show menu button */
     }
 
-    #nav-links {
-        display: none; /* Initially hidden */
+    #navbar {
+        display: none; /* Hide links initially */
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Below the navbar */
+        top: 60px; /* Adjust based on navbar height */
         right: 0;
         background-color: #333;
         width: 100%;
         text-align: center;
+        z-index: 1000;
     }
 
-    #nav-links.active {
-        display: flex; /* Show menu when active */
-    }
-
-    #nav-links li {
-        padding: 10px 0;
-    }
-
-    #nav-links li a {
-        font-size: 1.2rem;
-    }
-    .get-started-btn, .contacts-btn {
+    .get-started-btn,
+    .contacts-btn {
         padding: 18px 35px; /* Slightly increased button size */
         font-size: 1.3rem; /* Adjusted font size */
     }
-    
 
     #services {
         flex-direction: column;
@@ -808,27 +823,26 @@ width: 100%;
         width: 80%;
         height: auto;
     }
+
     .serv img {
         height: 50%; /* Reduced image height */
-        width: 50%;  /* Reduced image width */
+        width: 50%; /* Reduced image width */
         object-fit: contain; /* Maintain aspect ratio */
     }
 
+    #div1 {
+        margin-top: 0px;
+        display: none;
+    }
 
-    #div1{
+    #div2 {
         margin-top: 0px;
-       display: none;
     }
-    
-    #div2{
-        margin-top: 0px;
-     
-    }
-    
+
     #detail {
         width: 90%;
         height: auto;
-        margin: 0%;
+        margin: 0 auto; /* Center align */
     }
 
     .team-container {
@@ -842,7 +856,8 @@ width: 100%;
         padding: 20px;
     }
 
-    #abt1, #abt2 {
+    #abt1,
+    #abt2 {
         width: 100%;
         text-align: center;
         padding: 10px;
@@ -872,4 +887,32 @@ width: 100%;
         flex-direction: column;
         width: 90%;
     }
+
+    /* Mobile-friendly footer */
+    footer {
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        margin: 0;
+        word-wrap: break-word; /* Prevent text overflow */
+    }
+    .footer-links{
+        display: none;
+    }
+}
+
+/* Desktop Adjustments */
+@media (min-width: 769px) {
+    .full-logo {
+        display: inline; /* Show full logo */
+    }
+
+    .short-logo {
+        display: none; /* Hide short logo */
+    }
+  
+  
 }
