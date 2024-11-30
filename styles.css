@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     scroll-behavior: smooth;
+     
 
 }
 
@@ -25,7 +26,7 @@ body {
     color: black;
     align-items: center;
     justify-content:space-around;
-   padding-left:30px;padding-right: 10px;
+   padding-left:20px;padding-right: 20px;
     height: 575px;
     margin-bottom: 50px;
 }
@@ -62,8 +63,8 @@ body {
     justify-content: center;
     align-items: center;
     width: 42%;
-    height:42%;
-    
+    height:62%;
+    min-width: 39%;
     
 
 }
@@ -72,6 +73,7 @@ body {
     border-radius: 20px;
     object-fit: cover;
     width: 100%;
+    height: 100%;
   
 }
 
@@ -514,7 +516,7 @@ width: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 10px 0px;
 }
 
 #map {
@@ -528,6 +530,7 @@ width: 100%;
     justify-content: space-around;
     text-align: center;
     max-width: 500px;
+
 }
 
 
@@ -733,15 +736,13 @@ width: 100%;
     }
     .name{
         display: flex;
-        justify-content: center;
+        justify-content:space-around;
         text-align: center;
         
     }
     .name h2{
-
-        text-align: center;
-        padding-left: 12px;
-        margin: 0%;
+        width: 100%;
+        
     }
 
 
@@ -750,16 +751,14 @@ width: 100%;
         text-align: center; /* Center align header content */
     }
 
-    .header
-
-    #hero {
+    .main-header{
         display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center;
         justify-content: center;
-        text-align: center; /* Center text content */
+        padding: 0%;
+        margin: 0%;
     }
 
+   
     #but {
         gap: 20px;
         display: flex;
@@ -785,12 +784,22 @@ width: 100%;
         font-size: 1rem;
     }
 
-    #backvideo {
-        width: 100%; /* Full width */
-        height: 100vh; /* Full viewport height */
-        object-fit: cover; /* Maintain aspect ratio and cover screen */
+    #hero {
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        justify-content:space-between;
+        text-align: center; /* Center text content */
+        position: relative;
     }
 
+    #backvideo {
+       padding: 10px;
+        width: 80vw; /* Full width of the viewport */
+        height: 100vh; /* Full height of the viewport */
+        object-fit: cover; /* Ensures video covers screen without distortion */
+       
+    }
     #menu-toggle {
         display: block; /* Show menu button */
     }
@@ -832,11 +841,12 @@ width: 100%;
 
     #div1 {
         margin-top: 0px;
-        display: none;
+       
     }
 
     #div2 {
         margin-top: 0px;
+        display: none;
     }
 
     #detail {
@@ -873,10 +883,23 @@ width: 100%;
         width: 100%;
         height: auto;
     }
-
+    #mapp p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100vh;
+       
+    }
     .map-container {
         flex-direction: column;
         width: 100%;
+    }
+
+    #mapp{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px;
     }
 
     .map-card {
